@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "outDir": "backend/dist",
+    "rootDir": "backend/src",
+
+
+    "strict": true,
+    "strictFunctionTypes": true, // Ensures function parameters are checked for variance
+    "strictPropertyInitialization": true, // Ensures class properties are initialized
+    "alwaysStrict": true, // Ensures that your code is always in strict mode
+
+    "noImplicitAny": true,                    // Disallow untyped variables or parameters
+    "noImplicitThis": true,                   // Disallow untyped `this` context
+    "strictNullChecks": true,                 // Ensure `null` and `undefined` are handled explicitly
+    // "noImplicitReturns": true,                // Ensure functions return a value or explicitly `void`
+    "noFallthroughCasesInSwitch": true,       // Ensure all switch cases are handled
+
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "."
+  },
+  "include": ["backend/src/**/*"],   // Corrected path
+  "exclude": ["node_modules"]
+}
