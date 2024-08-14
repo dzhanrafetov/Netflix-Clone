@@ -22,6 +22,7 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "."
   },
-  "include": ["backend/src/**/*"],   // Corrected path
+  "include": ["backend/src/**/*","express.d.ts"],
+
   "exclude": ["node_modules"]
 }

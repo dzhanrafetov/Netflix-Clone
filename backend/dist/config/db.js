@@ -8,7 +8,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const envVars_1 = require("./envVars");
 const connectDB = async () => {
     try {
-        const conn = await mongoose_1.default.connect(envVars_1.ENV_VARS.MONGO_URI);
+        await mongoose_1.default.connect(envVars_1.ENV_VARS.MONGO_URI);
         console.log("Mongo DB connected");
     }
     catch (error) {
