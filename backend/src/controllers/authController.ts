@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { IUser, UserModel } from "../model/userModel";
+import { IUser, UserModel } from "../models/userModel";
 import bcryptjs from "bcryptjs"
 import { generateTokenAndSetCookie } from "../utils/generateToken";
 

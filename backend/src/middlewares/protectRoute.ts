@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken"
-import { UserModel, IUser } from "../model/userModel"
+import { UserModel, IUser } from "../models/userModel"
 
 import { ENV_VARS } from "../config/envVars"
 import { NextFunction, Request, Response } from "express"

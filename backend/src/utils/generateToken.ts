@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken"
 import { ENV_VARS } from "../config/envVars"
 import { Response } from "express"
-import { IUser } from "../model/userModel";
+import { IUser } from "../models/userModel";
 
 export const generateTokenAndSetCookie = (userId:string, res: Response) => {
   const jwtSecret = ENV_VARS.JWT_SECRET;
