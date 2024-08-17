@@ -34,12 +34,15 @@ interface AuthState {
 
 // Create the Zustand store with the AuthState interface
 export const userAuthStore = create<AuthState>((set) => ({
+
   user: null,
+
   isSigningIn: false,
   isSigningUp: false,
   isCheckingAuth: true,
   isLoggingOut: false,
   signup: async (credentials: SignupCredentials) => {
+    
     set({ isSigningUp: true });
     try {
       const response = await axios.post("/api/v1/auth/signup", credentials);
