@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FormEvent } from "react";
-
+import { userAuthStore } from "../store/authStore";
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const {login} =userAuthStore() as any;
 
   const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(email, password);
+    login({email,password})
   }
 
 
@@ -53,7 +54,7 @@ const LoginPage = () => {
 
           <button className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700">
 
-            Sign Up
+            Sign In
           </button>
         </form>
         <div className="text-center text-gray-400">Don't have an account?

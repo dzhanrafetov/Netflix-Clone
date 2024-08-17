@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { IUser, UserModel } from "../models/userModel";
 import bcryptjs from "bcryptjs"
 import { generateTokenAndSetCookie } from "../utils/generateToken";
+import { CustomRequest } from "../middlewares/protectRoute";
 
 export async function signup(req: Request, res: Response) {
   try {
@@ -105,8 +106,8 @@ export async function login(req: Request, res: Response) {
 
     })
   } catch (error) {
-console.log("Error in login controller")
-return res.status(500).json({ success: false, message: "Server error" })
+    console.log("Error in login controller")
+    return res.status(500).json({ success: false, message: "Server error" })
 
   }
 
@@ -126,4 +127,14 @@ export async function logout(req: Request, res: Response) {
 
   }
 
+}
+export async function authCheck(req: Request, res: Response) {
+  const user = (req as CustomRequest).user; // Access user from req.user (custom property)
+  try {
+    res.status(200).json({ success: true, user: user })
+  } catch (error) {
+    console.log("Error in AuthCheck Controller")
+    return res.status(500).json({ success: false, message: "Server error" })
+
+  }
 }
