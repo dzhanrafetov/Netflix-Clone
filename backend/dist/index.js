@@ -27,7 +27,7 @@ if (envVars_1.ENV_VARS.NODE_ENV === "production") {
         res.sendFile(path_1.default.resolve(__dirname, "frontend", "dist", "index.html"));
     });
 }
-app.listen(PORT || 3001, () => {
+app.listen(PORT, () => {
     (0, db_1.connectDB)();
     console.log("Server is running on PORT:" + PORT);
 });
