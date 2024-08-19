@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm i --save-dev @types/node",
+    "postinstall": "npm install --save-dev @types/node @types/mongoose @types/express @types/dotenv @types/bcryptjs @types/jsonwebtoken",
     "dev": "NODE_ENV=development ts-node-dev --respawn backend/src/index.ts",
     "build": "tsc && npm install --prefix frontend && npm run build --prefix frontend",
     "start": "NODE_ENV=production node backend/dist/index.js"
