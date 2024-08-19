@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "postinstall": "npm install --save-dev @types/node @types/mongoose @types/express @types/dotenv @types/bcryptjs @types/jsonwebtoken",
     "dev": "NODE_ENV=development ts-node-dev --respawn backend/src/index.ts",
-    "build": "tsc && npm install --prefix frontend && npm run build --prefix frontend",
+    "build": "tsc && npm install && nom install --prefix frontend && npm run build --prefix frontend",
     "start": "NODE_ENV=production node backend/dist/index.js"
   },
   "keywords": [],
@@ -24,8 +23,10 @@
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
     "@types/cookie-parser": "^1.4.7",
+    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.6",
+    "@types/mongoose": "^5.11.97",
     "@types/node": "^22.4.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.5.4"
