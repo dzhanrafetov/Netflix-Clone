@@ -6,7 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.signup = signup;
 exports.login = login;
 exports.logout = logout;
-const userModel_1 = require("../model/userModel");
+exports.authCheck = authCheck;
+const userModel_1 = require("../models/userModel");
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const generateToken_1 = require("../utils/generateToken");
 async function signup(req, res) {
@@ -102,6 +103,16 @@ async function logout(req, res) {
     }
     catch (error) {
         console.log("Error in Logout controller");
+        return res.status(500).json({ success: false, message: "Server error" });
+    }
+}
+async function authCheck(req, res) {
+    const user = req.user; // Access user from req.user (custom property)
+    try {
+        res.status(200).json({ success: true, user: user });
+    }
+    catch (error) {
+        console.log("Error in AuthCheck Controller");
         return res.status(500).json({ success: false, message: "Server error" });
     }
 }

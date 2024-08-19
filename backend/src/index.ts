@@ -11,7 +11,6 @@ import path from "path";
 
 const app = express()
 const PORT = ENV_VARS.PORT;
-const __dirname = path.resolve();
 
 app.use(express.json());
 app.use(cookieParser())
@@ -21,8 +20,7 @@ app.use("/api/v1/movie", protectRoute, movieRoute);
 app.use("/api/v1/tv", protectRoute, tvRoute);
 app.use("/api/v1/search", protectRoute, searchRoute);
 if (ENV_VARS.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname,"/frontend/dist")))
-
+  app.use(express.static(path.join(__dirname,"../../frontend/dist")))
   app.get("*",(req,res) => {
     res.sendFile(path.resolve(__dirname,"frontend","dist","index.html"))
   })
@@ -31,5 +29,5 @@ if (ENV_VARS.NODE_ENV === "production") {
 
 app.listen(PORT, () => {
   connectDB();
-  console.log("Server is running")
+  console.log("Server is running on PORT:"+PORT)
 })
