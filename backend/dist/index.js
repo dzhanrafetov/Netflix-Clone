@@ -24,7 +24,7 @@ app.use("/api/v1/search", protectRoute_1.protectRoute, searchRoute_1.default);
 if (envVars_1.ENV_VARS.NODE_ENV === "production") {
     app.use(express_1.default.static(path_1.default.join(__dirname, "../../frontend/dist")));
     app.get("*", (req, res) => {
-        res.sendFile(path_1.default.resolve(__dirname, "frontend", "dist", "index.html"));
+        res.sendFile(path_1.default.resolve(__dirname, "../../frontend/dist", "index.html"));
     });
 }
 app.listen(PORT, () => {
