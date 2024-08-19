@@ -8,17 +8,17 @@ const SignUpPage = () => {
 
 
   const { searchParams } = new URL(document.location.href);
-	const emailValue = searchParams.get("email");
+  const emailValue = searchParams.get("email");
 
-	const [email, setEmail] = useState(emailValue || "");
-	const [username, setUsername] = useState("");
-	const [password, setPassword] = useState("");
-  const {signup} =userAuthStore() as any;
+  const [email, setEmail] = useState(emailValue || "");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { signup, isSigningUp } = userAuthStore() as any;
 
 
   const handleSignUp = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    signup({email,username,password});
+    signup({ email, username, password });
   }
 
 
@@ -72,9 +72,11 @@ const SignUpPage = () => {
 
           </div>
 
-          <button className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700">
+          <button className="w-full py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700"
+            disabled={isSigningUp}>
 
-            Sign Up
+
+            {isSigningUp ? "Loading..." : "Sign Up"}
           </button>
         </form>
         <div className="text-center text-gray-400">Already a member?
