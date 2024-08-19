@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "NODE_ENV=development ts-node-dev --respawn backend/src/index.ts",
     "build": "tsc && npm install && npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "NODE_ENV=production node backend/dist/index.js"
+    "start": "NODE_ENV=production node backend/dist/index.js",
+    "render":"npm ci && npm run build"
   },
   "keywords": [],
   "author": "",
