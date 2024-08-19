@@ -42,7 +42,7 @@ ehthumbs.db
 # Optional: TypeScript compiled output
 *.tsbuildinfo
 
-# Optional: Lock files
+# Optional: Lock filess
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
