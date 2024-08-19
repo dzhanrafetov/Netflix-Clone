@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development ts-node-dev --respawn backend/src/index.ts",
-    "build": "tsc && npm install && nom install --prefix frontend && npm run build --prefix frontend",
+    "build": "tsc && npm install && npm install --prefix frontend && npm run build --prefix frontend",
     "start": "NODE_ENV=production node backend/dist/index.js"
   },
   "keywords": [],
