@@ -1,0 +1,8 @@
+# frontend/.gitignore
+
+# Ignore lock files in frontend directory
+package-lock.json
+
+# Other files to ignore
+node_modules/
+dist/

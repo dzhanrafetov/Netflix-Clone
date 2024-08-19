@@ -1,3 +1,5 @@
+#Root .gitignore
+
 # Logs
 logs/
 *.log
